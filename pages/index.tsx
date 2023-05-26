@@ -1,3 +1,4 @@
+import { Request } from 'express'
 import Link from 'next/link'
 import { GetServerSidePropsContext } from 'next'
 
@@ -18,8 +19,12 @@ export default function Home() {
   )
 }
 
-export const getServerSideProps = (context: GetServerSidePropsContext) => {
-  console.log((context.req as any).test)
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const request = context.req as Request
+  console.log(request.get('referer'))
+  console.log(request.blah)
 
   return { props: {} }
 }
