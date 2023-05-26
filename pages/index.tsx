@@ -24,7 +24,7 @@ export const getServerSideProps = async (
 ) => {
   const request = context.req as Request
   console.log(request.get('referer'))
-  console.log(request.blah)
+  console.log(request.test)
 
   return { props: {} }
 }
