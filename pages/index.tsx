@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { GetServerSidePropsContext } from 'next'
 
 export default function Home() {
   return (
@@ -15,4 +16,10 @@ export default function Home() {
       </li>
     </ul>
   )
+}
+
+export const getServerSideProps = (context: GetServerSidePropsContext) => {
+  console.log((context.req as any).test)
+
+  return { props: {} }
 }
